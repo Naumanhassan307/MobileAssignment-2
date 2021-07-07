@@ -1,16 +1,27 @@
-//import liraries
-import React, { Component } from 'react';
-import { View, Text,} from 'react-native';
-import AddTask from './src/screens/addTask/AddTask';
-import ShowTask from './src/screens/showTask/ShowTask';
+import React from "react";
 
-// create a component
-const App = () => {
+import 'react-native-gesture-handler';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+
+import AddTask from "./src/screens/addTask/AddTask";
+import ShowAddTask from "./src/screens/showTask/ShowTask"
+import { Provider } from "react-redux";
+import store from "./src/config/Store"
+
+function App(){
+  const Stack = createStackNavigator();
   return (
-    <View>
-      {/* <AddTask /> */}
-      <ShowTask />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="AddTask" component={AddTask} />
+          <Stack.Screen name="ShowTask" component={ShowAddTask} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
