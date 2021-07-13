@@ -12,7 +12,7 @@ function useHome(){
 
         let newTask = {
             taskId: Math.random()*100000,
-            taskMsg: task,
+            taskMsg: task.toUpperCase(),
         }
 
         dsipatch(TaskAddAct(newTask))

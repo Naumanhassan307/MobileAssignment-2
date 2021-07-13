@@ -9,7 +9,13 @@ function Home({navigation}) {
   return (
     <View style={HomeStyles.container}>
       <View style={HomeStyles.container1}>
-        <Text>.</Text>
+        <Text
+          style={{
+            
+            fontSize:32,
+          }}>
+          Todo App
+        </Text>
       </View>
       <View style={HomeStyles.container2}>
         <View style={HomeStyles.container2Div1}>
@@ -24,11 +30,15 @@ function Home({navigation}) {
               margin: 5,
               fontSize: 18,
             }}
-            onChangeText={(e)=>{setTask(e);}}
+            onChangeText={e => {
+              setTask(e);
+            }}
           />
         </View>
         <View style={HomeStyles.container2Div2}>
-          <TouchableOpacity style={HomeStyles.container2Div1btn} onPress={ctaAddHandler}>
+          <TouchableOpacity
+            style={HomeStyles.container2Div1btn}
+            onPress={ctaAddHandler}>
             <Text style={{color: '#FFFFFF', fontSize: 22}}>
               + Add a New Task
             </Text>
