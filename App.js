@@ -1,12 +1,17 @@
 import React from "react";
 
 import 'react-native-gesture-handler';
+import { Provider } from "react-redux";
+import store from "./src/config/Store"
 
 import NavBar from "./src/config/navigation/Navigation";
 function App(){
   
   return (
-    <NavBar />
+    <Provider store={store}>
+
+      <NavBar />
+    </Provider>
   );
 };
 

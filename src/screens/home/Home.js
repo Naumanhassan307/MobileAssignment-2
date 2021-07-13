@@ -2,7 +2,10 @@ import React from 'react';
 
 import {HomeStyles} from './HomeStyle';
 import {Text, View, TouchableOpacity, TextInput} from 'react-native';
+import useHome from './useHome';
 function Home({navigation}) {
+
+    const [setTask, ctaAddHandler] = useHome();
   return (
     <View style={HomeStyles.container}>
       <View style={HomeStyles.container1}>
@@ -21,10 +24,11 @@ function Home({navigation}) {
               margin: 5,
               fontSize: 18,
             }}
+            onChangeText={(e)=>{setTask(e);}}
           />
         </View>
         <View style={HomeStyles.container2Div2}>
-          <TouchableOpacity style={HomeStyles.container2Div1btn}>
+          <TouchableOpacity style={HomeStyles.container2Div1btn} onPress={ctaAddHandler}>
             <Text style={{color: '#FFFFFF', fontSize: 22}}>
               + Add a New Task
             </Text>
