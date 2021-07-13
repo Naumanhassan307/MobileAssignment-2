@@ -1,11 +1,12 @@
 import React from "react";
 
 import 'react-native-gesture-handler';
-import {Text} from "react-native";
+
+import NavBar from "./src/config/navigation/Navigation";
 function App(){
   
   return (
-    <Text>Hello</Text>
+    <NavBar />
   );
 };
 
