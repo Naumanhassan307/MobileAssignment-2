@@ -12,7 +12,7 @@ function SignUp() {
       <View style={SignUpStyle.mainDiv1}>
         <Text
           style={{
-            
+            color: "#FFA500",
             fontSize: 45,
           }}>
           Tasker
@@ -45,7 +45,7 @@ function SignUp() {
           }}
         />
         <TextInput
-          placeholder="Enter Password"
+          placeholder="Password (Atleast 7 characters )"
           secureTextEntry={true}
           style={{
             borderWidth: 1,
@@ -61,7 +61,7 @@ function SignUp() {
       <View style={SignUpStyle.mainDiv3}>
 
       <Button title="Signup" />
-      <Button title="Login" />
+     
       </View>
     </View>
   );

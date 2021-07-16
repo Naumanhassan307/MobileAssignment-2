@@ -1,6 +1,5 @@
-
 import {StyleSheet} from 'react-native';
-const SignUpStyle = StyleSheet.create({
+const SigninStyle = StyleSheet.create({
   mainDiv: {
     flex: 1,
     justifyContent: 'center',
@@ -12,7 +11,7 @@ const SignUpStyle = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    width:"100%",
+    width: '100%',
   },
   mainDiv2: {
     flex: 3,
@@ -20,14 +19,14 @@ const SignUpStyle = StyleSheet.create({
     alignItems: 'center',
 
     backgroundColor: '#FFFFFF',
-    width:"100%",
+    width: '100%',
   },
   mainDiv3: {
-    flex: 1,
+    flex: 2,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    width:"100%",
+    width: '100%',
   },
 });
-export default SignUpStyle;
+export default SigninStyle;

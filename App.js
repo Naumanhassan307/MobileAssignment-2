@@ -7,6 +7,7 @@ import store from "./src/config/Store"
 import NavBar from "./src/config/navigation/Navigation";
 import Date from "./src/screens/date/Date";
 import SignUp from "./src/auth/signUp/SignUp";
+import Signin from "./src/auth/signIn/SignIn";
 function App(){
   
   return (
@@ -14,7 +15,8 @@ function App(){
 
       {/* <NavBar /> */}
       {/* <Date /> */}
-      <SignUp />
+      {/* <SignUp /> */}
+      <Signin />
     </Provider>
   );
 };
