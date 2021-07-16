@@ -10,13 +10,17 @@ function useHome(){
 
     const ctaAddHandler = () =>{
 
+        if(task === ""){
+            alert("Please Fill Field!")
+            return
+        }else{
         let newTask = {
             taskId: Math.random()*100000,
             taskMsg: task.toUpperCase(),
         }
 
         dsipatch(TaskAddAct(newTask))
-        
+    }
     }
     
     return [setTask, ctaAddHandler];
