@@ -14,7 +14,7 @@ function Home({navigation}) {
             
             fontSize:32,
           }}>
-          Todo App
+          Tasker
         </Text>
       </View>
       <View style={HomeStyles.container2}>

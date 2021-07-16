@@ -13,10 +13,8 @@ function App(){
   return (
     <Provider store={store}>
 
-      {/* <NavBar /> */}
-      {/* <Date /> */}
-      {/* <SignUp /> */}
-      <Signin />
+      <NavBar />
+      
     </Provider>
   );
 };
