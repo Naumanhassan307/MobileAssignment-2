@@ -3,8 +3,11 @@ import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import Button from '../../constant/button/Button';
 
 import SigninStyle from './SigninStyle';
+import useSign from './useSign';
 
 function Signin({navigation}) {
+
+  const [setEmail, setPass, ctaLoginHandler] = useSign();
   return (
     <View style={SigninStyle.mainDiv}>
       <View style={SigninStyle.mainDiv1}>
@@ -29,6 +32,9 @@ function Signin({navigation}) {
             margin: 15,
             fontSize: 18,
           }}
+          onChangeText={e => {
+            setEmail(e);
+          }}
         />
         <TextInput
           placeholder="Password (Atleast 7 characters )"
@@ -42,10 +48,13 @@ function Signin({navigation}) {
             margin: 5,
             fontSize: 18,
           }}
+          onChangeText={e => {
+            setPass(e);
+          }}
         />
       </View>
       <View style={SigninStyle.mainDiv3}>
-        <Button title="Login" />
+        <Button title="Login" onPress={ctaLoginHandler} />
         <Button
           title="+ Create Account"
           onPress={() => navigation.navigate('SignUp')}
