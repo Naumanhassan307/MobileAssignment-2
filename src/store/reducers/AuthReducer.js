@@ -1,5 +1,5 @@
 
-import { LOG_IN } from "../TypeConstants";
+import { LOG_IN  ,LOG_OUT} from "../TypeConstants";
 
 const initialState={
     isLogin: false,
@@ -15,6 +15,14 @@ function AuthReducer(state = initialState, action){
               ...state,
               isLogin: true,
               user: action.payload
+          }
+      }
+      case LOG_OUT:{
+          
+          return{
+              ...state,
+              isLogin: false,
+             
           }
       }
         

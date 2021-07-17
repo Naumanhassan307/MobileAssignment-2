@@ -1,6 +1,6 @@
 
 import {authentication, db} from '../../config/Firebase';
-import { LOG_IN } from '../TypeConstants';
+import { LOG_IN , LOG_OUT} from '../TypeConstants';
 
 export const LoginAct=(email, password)=> async (dispatch)=>{
     
@@ -15,7 +15,19 @@ export const LoginAct=(email, password)=> async (dispatch)=>{
         
     } catch (error) {
         console.log("error in signin", error);
-        alert("User Not Find!")
+         switch (error.code) {
+           case 'auth/invalid-email':
+             alert('Please enter valid E-mail!');
+             break;
+           case 'auth/weak-password':
+             alert('Password should be atleast 7 characters!');
+             break;
+
+           default:
+              alert('User Not Find!');
+              break;
+         }
+       
     }
 
    
@@ -29,6 +41,37 @@ export const SignUpAct=(newObj, email, password)=> async (dispatch)=>{
         console.log("signup res ", res);
         let usersRes = await db.collection("users").add(newObj)
         console.log("user res is ", usersRes);
+        alert("User Successfully Registered!")
+        
+    } catch (error) {
+        console.log("error in signUp", error.code);
+        switch (error.code) {
+          case 'auth/invalid-email':
+            alert('Please enter valid E-mail!');
+            break;
+          case 'auth/weak-password':
+            alert('Password should be atleast 7 characters!');
+            break;
+
+          default:
+            break;
+        }
+        
+    }
+
+   
+
+}
+export const SignOutAct=()=> async (dispatch)=>{
+    
+    try {
+
+        let res = await authentication.signOut()
+        console.log("signup res ", res);
+       
+        dispatch({
+            type: LOG_OUT
+        })
         
     } catch (error) {
         console.log("error in signUp", error);
