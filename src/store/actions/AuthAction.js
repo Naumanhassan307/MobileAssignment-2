@@ -1,5 +1,5 @@
 
-import {authentication} from '../../config/Firebase';
+import {authentication, db} from '../../config/Firebase';
 import { LOG_IN } from '../TypeConstants';
 
 export const LoginAct=(email, password)=> async (dispatch)=>{
@@ -16,6 +16,23 @@ export const LoginAct=(email, password)=> async (dispatch)=>{
     } catch (error) {
         console.log("error in signin", error);
         alert("User Not Find!")
+    }
+
+   
+
+}
+export const SignUpAct=(newObj, email, password)=> async (dispatch)=>{
+    
+    try {
+
+        let res = await authentication.createUserWithEmailAndPassword(email, password)
+        console.log("signup res ", res);
+        let usersRes = await db.collection("users").add(newObj)
+        console.log("user res is ", usersRes);
+        
+    } catch (error) {
+        console.log("error in signUp", error);
+        alert("Something went wrong!!")
     }
 
    
